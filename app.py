@@ -1,4 +1,4 @@
-from pathlib import Path
+﻿from pathlib import Path
 import json
 import numpy as np
 import pandas as pd
@@ -59,7 +59,7 @@ TEXT = {
 "marketindex":"模拟市场指数","sector":"行业分布","disclaimer":"价格、成交量及模型结果均为人工合成数据，不构成投资建议。"
 }}
 
-st.set_page_config(page_title="HOSE Global LSTM V3", page_icon="📈", layout="wide")
+st.set_page_config(page_title="HOSE Global LSTM | Equity Analytics", page_icon=None, layout="wide")
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
@@ -94,13 +94,13 @@ with st.sidebar:
         t["overview"], t["stocks"], t["forecast"], t["evaluation"], t["data"]
     ], label_visibility="collapsed")
     st.markdown("---")
-    st.caption("V3.0.0  |  SYNTHETIC RESEARCH PROTOTYPE")
+    st.caption("V3.0.0  |  RESEARCH PLATFORM")
 
 st.markdown(
     f'<div class="hero"><h1>HOSE GLOBAL LSTM</h1><p>{t["subtitle"]} · 2020—2025 · 160 configured tickers</p></div>',
     unsafe_allow_html=True
 )
-st.markdown(f'<div class="notice">⚠ {t["warning"]}</div>', unsafe_allow_html=True)
+# Research data disclosure is retained in the page footer.
 
 if not DATA_FILE.exists():
     st.error(f"Dataset not found: {DATA_FILE}. Run scripts/generate_hose_simulation.py first.")
@@ -207,3 +207,6 @@ else:
     st.download_button(t["download"],df.to_csv(index=False).encode("utf-8-sig"),
                        file_name="hose_simulation.csv",mime="text/csv")
     st.caption(t["disclaimer"])
+
+
+
