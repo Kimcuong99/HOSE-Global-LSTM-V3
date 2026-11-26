@@ -107,6 +107,7 @@ if not DATA_FILE.exists():
     st.stop()
 
 df = pd.read_csv(DATA_FILE, parse_dates=["date"])
+df = df.drop(columns=["data_type", "data_source"], errors="ignore")
 required = {"ticker","industry","date","close","adjusted_close","volume","next_day_return"}
 missing = required - set(df.columns)
 if missing:
@@ -203,5 +204,6 @@ else:
             st.error(f"Could not read uploaded file: {exc}")
     st.download_button(t["download"],df.to_csv(index=False).encode("utf-8-sig"),
                        file_name="hose_simulation.csv",mime="text/csv")
+
 
 
