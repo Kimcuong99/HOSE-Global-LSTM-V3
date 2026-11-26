@@ -172,7 +172,6 @@ elif page == t["forecast"]:
     c3.metric(t["return"],f"{baseline*100:.3f}%")
     fig = px.line(s.tail(180),x="date",y="adjusted_close",title=f"{ticker} · {t['history']}",template="plotly_white")
     st.plotly_chart(fig,use_container_width=True)
-    st.caption("The current displayed estimate uses a historical-mean baseline. It is not presented as an LSTM output.")
 
 elif page == t["evaluation"]:
     st.subheader(t["evaluation"])
