@@ -138,8 +138,6 @@ if page == t["overview"]:
         fig = px.bar(sectors,x="industry",y="ticker",title=t["sector"],template="plotly_white")
         fig.update_layout(margin=dict(l=10,r=10,t=50,b=10),height=370,xaxis_tickangle=-35)
         st.plotly_chart(fig,use_container_width=True)
-    st.caption(t["disclaimer"])
-
 elif page == t["stocks"]:
     st.subheader(t["stocks"])
     a,b = st.columns(2)
@@ -206,7 +204,4 @@ else:
             st.error(f"Could not read uploaded file: {exc}")
     st.download_button(t["download"],df.to_csv(index=False).encode("utf-8-sig"),
                        file_name="hose_simulation.csv",mime="text/csv")
-    st.caption(t["disclaimer"])
-
-
 
