@@ -1,0 +1,18 @@
+{
+  "lookback": 60,
+  "features": [
+    "open_rel",
+    "high_rel",
+    "low_rel",
+    "close_rel",
+    "adjusted_close_rel",
+    "volume_log_change",
+    "market_return"
+  ],
+  "target": "next_day_return",
+  "train_end": "2022-12-31",
+  "validation_end": "2024-12-31",
+  "test_start": "2025-01-01",
+  "data_type": "SYNTHETIC",
+  "note": "Synthetic prototype data; not actual HOSE market observations."
+}

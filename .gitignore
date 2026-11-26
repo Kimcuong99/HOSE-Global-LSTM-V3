@@ -1,0 +1,17 @@
+﻿.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.streamlit/secrets.toml
+.env
+python-3.12.10-amd64.exe
+data/simulation/raw/
+data/simulation/processed/*.npz
+data/simulation/processed/*metadata.csv
+data/simulation/processed/feature_scaler.joblib
+models/simulation/*
+outputs/simulation/*
+!outputs/simulation/benchmark_metrics.csv
+!outputs/simulation/global_lstm_predictions.csv
+!models/simulation/global_lstm_final.keras
